@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ "$#" -lt 1 ]; then
+    echo "[error] You must enter at least 1 ticket number."
+    exit 1
+fi
+
+for ticketID in "$@"; do
+    /Applications/Firefox.app/Contents/MacOS/firefox -url "${JIRA_URL}/browse/${ticketID}"
+done
